@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  db2:
+    image: ibmcom/db2
+    privileged: true
+    ports:
+      - "50000:50000"
+    networks:
+      - db2network
+    environment:
+      - LICENSE=accept
+      - DB2INST1_PASSWORD=db2pass
+      - SAMPLEDB=true
+    volumes:
+      - /opt/db2/database:/database
+
+networks:
+  db2network:
+    driver: bridge
+

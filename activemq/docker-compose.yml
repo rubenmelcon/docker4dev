@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  activemq:
+    image: rmohr/activemq
+    environment:
+      - TZ=CEST
+    ports:
+      - "8161:8161"
+      - "1883:1883"
+    expose:
+      - 8161
+      - 1883
